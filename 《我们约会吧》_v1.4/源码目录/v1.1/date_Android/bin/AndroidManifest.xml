@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.date"
+      android:versionCode="1"
+      android:versionName="1.0">
+
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".LoginActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".RegActivity"  android:label="@string/RegActivity" />
+		<activity android:name=".MainActivity"   android:label="@string/Main"/>
+    	<activity android:name=".PubDateActivity"   android:label="@string/PubDate"/>
+    	<activity android:name=".DateListActivity"   android:label="@string/DateList"/>
+    	<activity android:name=".ContactsActivity"   android:label="@string/Contacts"/>
+    	<activity android:name=".ChatActivity"   android:label="@string/Chat"/>
+    	<activity android:name=".ModifyActivity"   android:label="@string/Modify"/>
+    	<activity android:name=".PwdModifyActivity"   android:label="@string/PwdModify"/>
+    	
+    	<activity android:name=".welcome.WelcomeDateActivity"/>
+    </application>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAMERA"/><!-- 拍照权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-sdk android:minSdkVersion="3"/>
+</manifest>

@@ -114,13 +114,14 @@
 			android:layout_marginTop="13dip"
 			android:layout_marginBottom="7dip"
 			>
-				<TextView 
-					android:text="@string/tvDistance" 
-					android:textColor="@drawable/black"
-					android:textSize="16px"
-					android:id="@+id/tvDistance" 
-					android:layout_width="50px"
-					android:layout_height="40px"></TextView>
+
+			<TextView
+			    android:id="@+id/tvDistance"
+			    android:layout_width="50px"
+			    android:layout_height="40px"
+			    android:text="@string/tvDistance"
+			    android:textColor="@drawable/black"
+			    android:textSize="16px" />
 
 				<EditText
 				    android:id="@+id/statusTest"
@@ -171,12 +172,6 @@
 					android:layout_height="60px"
 					android:src="@drawable/dateback"></ImageButton>
 		</TableRow>
-
-		<ImageButton
-		    android:id="@+id/btnTest"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:src="@android:drawable/btn_star" />
 
 	</TableLayout>
 </LinearLayout>
