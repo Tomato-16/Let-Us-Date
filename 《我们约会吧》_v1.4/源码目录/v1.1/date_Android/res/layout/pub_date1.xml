@@ -121,17 +121,12 @@
 					android:id="@+id/tvDistance" 
 					android:layout_width="50px"
 					android:layout_height="40px"></TextView>
-				<Spinner 
-				    android:layout_width="200px" 
-				    android:id="@+id/spinnerDistance" 
-				    android:layout_height="40px" ></Spinner>
-				 <TextView 
-					android:text="@string/tvTag2" 
-					android:textColor="@drawable/black"
-					android:textSize="16px"
-					android:id="@+id/textView2" 
-					android:layout_width="50px"
-					android:layout_height="40px"></TextView>
+
+				<EditText
+				    android:id="@+id/statusTest"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:ems="10" />
 		</TableRow>
 	</TableLayout>
 	<TextView 
@@ -176,15 +171,6 @@
 					android:layout_height="60px"
 					android:src="@drawable/dateback"></ImageButton>
 		</TableRow>
-
-		<EditText
-		    android:id="@+id/statusTest"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:ems="10" >
-
-		    <requestFocus />
-		</EditText>
 
 		<ImageButton
 		    android:id="@+id/btnTest"

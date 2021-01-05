@@ -31,17 +31,17 @@ public class PubDateActivity extends Activity{
 	private static final String[] dates_style={"吃饭","逛街","打球","其他"};
 	private static final String[] dates_sex={"女","男"};
 	private static final String[] dates_age={"70","80","90"};
-	private static final String[] dates_distance={"1","5","10"};
+///	private static final String[] dates_distance={"1","5","10"};
 	
 	private Spinner spstyle;
 	private Spinner spsex;
 	private Spinner spage;
-	private Spinner spdistance;
+///	private Spinner spdistance;
 	
 	private ArrayAdapter<CharSequence> adapterstyle;
 	private ArrayAdapter<CharSequence> adaptersex;
 	private ArrayAdapter<CharSequence> adapterage;
-	private ArrayAdapter<CharSequence> adapterdistance;
+///	private ArrayAdapter<CharSequence> adapterdistance;
 	/// 声明一个文本框
 	private EditText editStatusTest = null;
 	
@@ -140,8 +140,8 @@ public class PubDateActivity extends Activity{
         spsex.getBackground().setAlpha(150);
         spage = (Spinner) this.findViewById(R.id.spinnerAge);
         spage.getBackground().setAlpha(150);
-        spdistance = (Spinner) this.findViewById(R.id.spinnerDistance);
-        spdistance.getBackground().setAlpha(150);
+///        spdistance = (Spinner) this.findViewById(R.id.spinnerDistance);
+///        spdistance.getBackground().setAlpha(150);
         
         adapterstyle = new ArrayAdapter(this,android.R.layout.simple_spinner_item,dates_style);
         adapterstyle.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -155,9 +155,9 @@ public class PubDateActivity extends Activity{
         adapterage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spage.setAdapter(adapterage);
         
-        adapterdistance = new ArrayAdapter(this,android.R.layout.simple_spinner_item,dates_distance);
-        adapterdistance.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spdistance.setAdapter(adapterdistance);
+///        adapterdistance = new ArrayAdapter(this,android.R.layout.simple_spinner_item,dates_distance);
+///        adapterdistance.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+///        spdistance.setAdapter(adapterdistance);
         
 //        spstyle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { 
 //            @Override 
@@ -246,9 +246,10 @@ public class PubDateActivity extends Activity{
 					String sstyle = (String) spstyle.getSelectedItem();
 					String ssex = (String) spsex.getSelectedItem();
 					String sage = (String) spage.getSelectedItem();
-					String sdiatance = (String) spdistance.getSelectedItem();
+					String sstatus = editStatusTest.getEditableText().toString().trim();		///获得昵称
+///					String sdiatance = (String) spdistance.getSelectedItem();
 					
-					String msg = "<#PubDate#>"+sstyle+"|"+ssex+"|"+sage+"|"+sdiatance+"|"+uno;					//组织要返回的字符串
+					String msg = "<#PubDate#>"+sstyle+"|"+ssex+"|"+sage+"|"+sstatus+"|"+uno;					//组织要返回的字符串
 					mc.dout.writeUTF(msg);										//发出消息
 					String receivedMsg = mc.din.readUTF();		//读取服务器发来的消息
 					pd.dismiss();

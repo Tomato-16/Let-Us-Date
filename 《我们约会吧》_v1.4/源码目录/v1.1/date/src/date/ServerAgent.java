@@ -90,7 +90,8 @@ public class ServerAgent extends Thread{
 					Date date = DBUtil.getDate(sa[4]);
 					System.out.println(date);
 					if(date==null){
-						String result = DBUtil.writeNewDate(sa[0], sa[1], Integer.parseInt(sa[2]),Integer.parseInt(sa[3]),Integer.parseInt(sa[4]));
+						///修改一个参数
+						String result = DBUtil.writeNewDate(sa[0], sa[1], Integer.parseInt(sa[2]),sa[3],Integer.parseInt(sa[4]));
 						
 						if(result.equals(PubDate_SUCCESS)){			//约会发布成功
 							reply = "<#PubDate_SUCCESS#>";

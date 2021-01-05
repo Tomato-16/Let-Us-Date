@@ -466,7 +466,8 @@ public class DBUtil {
 		return result;
 	}
 	//方法：写入新的约会
-	public static String writeNewDate(String style,String sex,int age,int distance,int uno){
+	///修改，增加一个参数
+	public static String writeNewDate(String style,String sex,int age,String distance,int uno){
 		String result = null;
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -482,7 +483,8 @@ public class DBUtil {
 			ps.setString(2, new String(style.getBytes("GB2312")));	
 			ps.setString(3, new String(sex.getBytes("GB2312")));
 			ps.setInt(4, age);
-			ps.setInt(5, distance);
+			///修改为setString
+			ps.setString(5, distance);
 			ps.setInt(6, uno);
 			//int u_no = Integer.valueOf(author);	//转成字符串
 			//ps.setInt(4, u_no);
