@@ -106,7 +106,7 @@ public class DateListActivity extends Activity {
 
 			TextView tvDistance = new TextView(DateListActivity.this); // 创建用于显示姓名的TextView
 			tvDistance.setGravity(Gravity.LEFT); // 设置TextView的对齐方式
-			tvDistance.setText(" 与我相距：" + dateList.get(position)[4] + "Km");// 设置TextView的内容
+			tvDistance.setText(" 状态：" + dateList.get(position)[4]);// 设置TextView的内容
 			tvDistance.setTextSize(15.0f); // 设置字体大小
 			tvDistance.setTextColor(Color.BLUE); // 设置字体颜色
 			tvDistance.setPadding(150, 0, 0, 0);

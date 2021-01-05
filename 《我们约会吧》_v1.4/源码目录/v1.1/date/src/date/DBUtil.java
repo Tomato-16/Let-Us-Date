@@ -483,8 +483,8 @@ public class DBUtil {
 			ps.setString(2, new String(style.getBytes("GB2312")));	
 			ps.setString(3, new String(sex.getBytes("GB2312")));
 			ps.setInt(4, age);
-			///修改为setString
-			ps.setString(5, distance);
+			///修改为setString，GOGOGO！
+			ps.setString(5, new String(distance.getBytes("GB2312")));
 			ps.setInt(6, uno);
 			//int u_no = Integer.valueOf(author);	//转成字符串
 			//ps.setInt(4, u_no);
