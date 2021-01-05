@@ -246,7 +246,7 @@ public class PubDateActivity extends Activity{
 					String sstyle = (String) spstyle.getSelectedItem();
 					String ssex = (String) spsex.getSelectedItem();
 					String sage = (String) spage.getSelectedItem();
-					String sstatus = editStatusTest.getEditableText().toString().trim();		///获得昵称
+					String sstatus = editStatusTest.getEditableText().toString().trim();  ///获得状态
 ///					String sdiatance = (String) spdistance.getSelectedItem();
 					
 					String msg = "<#PubDate#>"+sstyle+"|"+ssex+"|"+sage+"|"+sstatus+"|"+uno;					//组织要返回的字符串

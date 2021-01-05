@@ -213,7 +213,7 @@ public class ServerAgent extends Thread{
 					
 						String result = DBUtil.writeNewChat(sa[0], sa[1], sa[2]);
 						
-						if(result.equals(WRITECHAT_SUCCESS)){			//约会发布成功
+						if(result.equals(WRITECHAT_SUCCESS)){			//对话更新成功
 							reply = "<#WRITECHAT_SUCCESS#>";
 						}
 						else {

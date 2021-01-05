@@ -116,7 +116,7 @@ public class DateListActivity extends Activity {
 
 			double la2 = Double.valueOf(dateList.get(position)[8]);
 			double lo2 = Double.valueOf(dateList.get(position)[9]);
-
+/*/// 没必要设置颜色
 			double a = la1 - la2;
 			double b = lo1 - lo2;
 
@@ -128,6 +128,7 @@ public class DateListActivity extends Activity {
 				tvDistance.setTextColor(Color.GREEN);
 			} else
 				tvDistance.setTextColor(Color.RED);
+*/
 			lnew.addView(tvName); // 将显示姓名的TextView添加到线性布局
 			lnew.addView(tvStyle);
 			lnew.addView(tvSex); // 将显示心情的TextView添加到线性布局

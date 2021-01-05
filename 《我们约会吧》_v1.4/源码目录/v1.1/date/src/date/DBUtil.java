@@ -423,7 +423,7 @@ public class DBUtil {
 				String dstyle = new String(rs.getString(2).getBytes("GB2312"));
 				String dsex = new String(rs.getString(3).getBytes("GB2312"));
 				String dage = rs.getString(4);
-				String ddistance = rs.getString(5);
+				String ddistance = new String(rs.getString(5).getBytes("GB2312"));
 				String uno = rs.getString(6);
 				//String hid = rs.getString(7);
 				result = new Date(did,dstyle, dsex, dage, ddistance, uno);
@@ -539,7 +539,7 @@ public class DBUtil {
 				String dstyle = new String(rs.getString(2).getBytes("GB2312"));
 				String dsex = new String(rs.getString(3).getBytes("GB2312"));
 				String dage = rs.getString(4);
-				String ddistance = rs.getString(5);
+				String ddistance = new String(rs.getString(5).getBytes("GB2312")); ///非常重要，试一下！
 				String uname = rs.getString(6);
 				String hid = rs.getString(7);
 				String uno = rs.getString(8);
