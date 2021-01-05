@@ -176,5 +176,21 @@
 					android:layout_height="60px"
 					android:src="@drawable/dateback"></ImageButton>
 		</TableRow>
+
+		<EditText
+		    android:id="@+id/statusTest"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:ems="10" >
+
+		    <requestFocus />
+		</EditText>
+
+		<ImageButton
+		    android:id="@+id/btnTest"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:src="@android:drawable/btn_star" />
+
 	</TableLayout>
 </LinearLayout>

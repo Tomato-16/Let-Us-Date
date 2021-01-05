@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -41,6 +42,8 @@ public class PubDateActivity extends Activity{
 	private ArrayAdapter<CharSequence> adaptersex;
 	private ArrayAdapter<CharSequence> adapterage;
 	private ArrayAdapter<CharSequence> adapterdistance;
+	/// 声明一个文本框
+	private EditText editStatusTest = null;
 	
 	Handler myHandler = new Handler(){
 		
@@ -127,6 +130,10 @@ public class PubDateActivity extends Activity{
         Intent intent = getIntent();			//获得启动该Activity的Intent对象
 		uno = intent.getStringExtra("uno");		//获得当前用户的id
 		
+		/// 获得当前的EditTest对象
+		editStatusTest = (EditText)findViewById(R.id.statusTest);
+		editStatusTest.getBackground().setAlpha(210);
+		
         spstyle = (Spinner) this.findViewById(R.id.spinnerStyle);
         spstyle.getBackground().setAlpha(150);
         spsex = (Spinner) this.findViewById(R.id.spinnerSex);
@@ -197,6 +204,22 @@ public class PubDateActivity extends Activity{
 				intent.putExtra("uno", uno);
 				startActivity(intent);										//启动Activity
 				finish();
+			}
+		});
+		
+		///添加一个按钮进行尝试
+		ImageButton btnTest = (ImageButton)findViewById(R.id.btnTest); //获得按钮对象
+		btnTest.setScaleType(ImageButton.ScaleType.CENTER_CROP);
+		btnTest.setPadding(8, 8, 8, 8);
+		btnTest.getBackground().setAlpha(100);
+		btnTest.setOnClickListener(new View.OnClickListener() {        //为返回按钮添加监听器
+			
+			public void onClick(View v) {
+				AlertDialog.Builder builder = new AlertDialog.Builder(PubDateActivity.this);
+                builder.setTitle("标题");
+                builder.setMessage("简单消息框");
+                builder.setPositiveButton("确定", null);
+                builder.show();
 			}
 		});
     }
