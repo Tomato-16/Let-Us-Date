@@ -1,0 +1,16 @@
+
+1.
+ÓÃ»§£º
+root
+ÃÜÂë£º
+pass
+¶Ë¿Ú£º
+3306
+
+2.sqlÓï¾ä£º
+create database date;
+use date;
+source e:/mysql_sql/data.sql
+show tables;
+
+select * from user ;

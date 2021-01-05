@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="@drawable/back">
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="50dp" android:text="即时聊天" style="@style/widget_config_title">
+	</TextView>
+	<ScrollView android:layout_width="fill_parent" android:id="@+id/scrollView1"
+		android:layout_height="290dip" android:fillViewport="true">
+		<ListView android:layout_width="fill_parent" android:id="@+id/listChat"
+			android:stackFromBottom="true" android:layout_height="wrap_content"></ListView>
+	</ScrollView>
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="25dp" android:text="消息发送" style="@style/widget_config_item">
+	</TextView>
+	<LinearLayout android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:id="@+id/linearLayout1"
+		android:orientation="horizontal">
+		<EditText android:layout_width="250dip" android:id="@+id/etChat"
+			android:layout_height="92dip" android:layout_marginLeft="5dip">
+		</EditText>
+		<LinearLayout android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:id="@+id/linearLayout1"
+			android:orientation="vertical">
+			<Button android:layout_height="45dip" style="@style/button"
+				android:layout_width="wrap_content" android:id="@+id/btnChat"
+				android:text="@string/btnChat"></Button>
+			<Button android:layout_height="45dip" style="@style/button"
+				android:layout_width="wrap_content" android:id="@+id/btnBack"
+				android:text="@string/btnBack1">
+			</Button>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
