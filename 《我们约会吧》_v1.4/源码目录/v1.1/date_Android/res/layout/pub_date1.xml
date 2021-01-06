@@ -53,10 +53,13 @@
 		android:layout_marginTop="8dp"
 		style="@style/widget_config_item">
 	</TextView>
-	<LinearLayout 
-	    android:layout_width="fill_parent" 
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:orientation="horizontal">
+	    android:layout_marginLeft="8dp"
+	    android:orientation="horizontal" >
+
 	    	<TextView 
 					android:text="@string/tvSex" 
 					android:textColor="@drawable/black"
@@ -106,14 +109,15 @@
 					android:layout_width="50px"
 					android:layout_height="40px"></TextView>
 		</TableRow>
-		<TableRow 
-			android:gravity="center_horizontal"
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content"
-			android:layout_marginLeft="20dip"
-			android:layout_marginTop="13dip"
-			android:layout_marginBottom="7dip"
-			>
+
+		<TableRow
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginBottom="7dip"
+		    android:layout_marginLeft="-15dp"
+		    android:layout_marginTop="13dip"
+		    android:gravity="center_horizontal" >
+
 				<TextView 
 					android:text="@string/tvDistance" 
 					android:textColor="@drawable/black"
@@ -126,7 +130,9 @@
 				    android:id="@+id/statusTest"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
+				    android:layout_marginLeft="2dp"
 				    android:ems="10" />
+
 		</TableRow>
 	</TableLayout>
 	<TextView 
