@@ -1,4 +1,5 @@
 package date;
+//getDate writeNewDate getDateList
 
 import static date.ConstantUtil.ALBUM;
 import static date.ConstantUtil.CHAR_ENCODING;
@@ -423,7 +424,7 @@ public class DBUtil {
 				String dstyle = new String(rs.getString(2).getBytes("GB2312"));
 				String dsex = new String(rs.getString(3).getBytes("GB2312"));
 				String dage = rs.getString(4);
-				///ÐÞ¸ÄÎªsetString
+				
 				String ddistance = new String(rs.getString(5).getBytes("GB2312"));
 				String uno = rs.getString(6);
 				//String hid = rs.getString(7);
