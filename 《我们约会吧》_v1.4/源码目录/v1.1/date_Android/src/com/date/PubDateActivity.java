@@ -26,28 +26,32 @@ public class PubDateActivity extends Activity{
 	MyConnector mc = null;
 	ProgressDialog pd;
 	
-	String uno = null;			//记录当前用户的id
+	//记录当前用户的id
+	String uno = null;
 	
-	private static final String[] dates_style={"吃饭","逛街","打球","其他"};
+	//约会方式、性别以及年龄的数组
+	private static final String[] dates_style={"吃饭","逛街","运动","看电影","其他"};
 	private static final String[] dates_sex={"女","男"};
 	private static final String[] dates_age={"70","80","90"};
-///	private static final String[] dates_distance={"1","5","10"};
 	
+	//窗口控件spinner，用来选取信息
 	private Spinner spstyle;
 	private Spinner spsex;
 	private Spinner spage;
-///	private Spinner spdistance;
+	/// 声明一个文本框，用来发布动态
+	private EditText editStatusTest = null;
 	
 	private ArrayAdapter<CharSequence> adapterstyle;
 	private ArrayAdapter<CharSequence> adaptersex;
 	private ArrayAdapter<CharSequence> adapterage;
-///	private ArrayAdapter<CharSequence> adapterdistance;
-	/// 声明一个文本框
-	private EditText editStatusTest = null;
 	
+	/*
+	 * handler 用来处理信息并在线程中间发送信息
+	 */
 	Handler myHandler = new Handler(){
 		
 		public void handleMessage(Message msg) {
+			//根据接收到的信息发出不同的提示框
 			switch(msg.what){
 			case 0:		
 				
@@ -133,16 +137,14 @@ public class PubDateActivity extends Activity{
 		/// 获得当前的EditTest对象
 		editStatusTest = (EditText)findViewById(R.id.statusTest);
 		editStatusTest.getBackground().setAlpha(210);
-		
+		// 获得当前的Spinner对象
         spstyle = (Spinner) this.findViewById(R.id.spinnerStyle);
         spstyle.getBackground().setAlpha(150);
         spsex = (Spinner) this.findViewById(R.id.spinnerSex);
         spsex.getBackground().setAlpha(150);
         spage = (Spinner) this.findViewById(R.id.spinnerAge);
         spage.getBackground().setAlpha(150);
-///        spdistance = (Spinner) this.findViewById(R.id.spinnerDistance);
-///        spdistance.getBackground().setAlpha(150);
-        
+        //获得ArrayAdapter对象，和Spinner进行设置
         adapterstyle = new ArrayAdapter(this,android.R.layout.simple_spinner_item,dates_style);
         adapterstyle.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spstyle.setAdapter(adapterstyle);
@@ -154,27 +156,15 @@ public class PubDateActivity extends Activity{
         adapterage = new ArrayAdapter(this,android.R.layout.simple_spinner_item,dates_age);
         adapterage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spage.setAdapter(adapterage);
-        
-///        adapterdistance = new ArrayAdapter(this,android.R.layout.simple_spinner_item,dates_distance);
-///        adapterdistance.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-///        spdistance.setAdapter(adapterdistance);
-        
-//        spstyle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { 
-//            @Override 
-//            public void onItemSelected(AdapterView<?> arg0, View arg1, 
-//                    int arg2, long arg3) { 
-//                //被选中时候发生的动作 
-//            } 
-//            @Override 
-//            public void onNothingSelected(AdapterView<?> arg0) { 
-//            } 
-//        });
 
-
+        // 获取layout中的提交按钮，设置参数
         ImageButton btnSubmit = (ImageButton)findViewById(R.id.btnSubmit);
         btnSubmit.setScaleType(ImageButton.ScaleType.CENTER_CROP);
         btnSubmit.setPadding(8, 8, 8, 8);
         btnSubmit.getBackground().setAlpha(100);
+        /*
+                         * 监听器，当点击时运行该函数
+         */
         btnSubmit.setOnClickListener(new View.OnClickListener() {
 		
 			public void onClick(View v) {
@@ -182,10 +172,14 @@ public class PubDateActivity extends Activity{
 				Submit();
 			}
 		});
+        // 获取layout中的取消按钮，设置参数
         ImageButton btnCancel = (ImageButton)findViewById(R.id.btnCancel);
         btnCancel.setScaleType(ImageButton.ScaleType.CENTER_CROP);
         btnCancel.setPadding(8, 8, 8, 8);
         btnCancel.getBackground().setAlpha(100);
+        /*
+		    * 监听器，当点击时运行该函数
+		*/
         btnCancel.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
@@ -193,11 +187,15 @@ public class PubDateActivity extends Activity{
 				Cancel();
 			}
 		});
-        ImageButton btnBack = (ImageButton)findViewById(R.id.btnBack);				//获得返回按钮对象
+        // 获取layout中的返回按钮，设置参数
+        ImageButton btnBack = (ImageButton)findViewById(R.id.btnBack);
         btnBack.setScaleType(ImageButton.ScaleType.CENTER_CROP);
         btnBack.setPadding(8, 8, 8, 8);
         btnBack.getBackground().setAlpha(100);
-		btnBack.setOnClickListener(new View.OnClickListener() {				//为返回按钮添加监听器
+        /*
+		    * 监听器，当点击时运行该函数
+		*/
+		btnBack.setOnClickListener(new View.OnClickListener() {	
 		
 			public void onClick(View v) {
 				Intent intent = new Intent(PubDateActivity.this,MainActivity.class);	//创建Intent对象
@@ -213,34 +211,23 @@ public class PubDateActivity extends Activity{
     		public void run(){
     			Looper.prepare();
 				try{
+					//创建连接
 					if(mc == null){
 						mc = new MyConnector(SERVER_ADDRESS, SERVER_PORT);
 					}
 					
-					
-//					Cursor cursorstyle=(Cursor)spstyle.getSelectedItem();
-//					String sstyle=cursorstyle.getString(1);
-//					Cursor cursorsex=(Cursor)spsex.getSelectedItem();
-//					String ssex=cursorsex.getString(1);
-//					Cursor cursorage=(Cursor)spage.getSelectedItem();
-//					String sage=cursorage.getString(1);
-//					Cursor cursordistance=(Cursor)spdistance.getSelectedItem();
-//					String sdiatance=cursordistance.getString(1);
-					
+					// 以字符串形式获取输入的数据
 					String sstyle = (String) spstyle.getSelectedItem();
 					String ssex = (String) spsex.getSelectedItem();
 					String sage = (String) spage.getSelectedItem();
-					String sstatus = editStatusTest.getEditableText().toString().trim();  ///获得状态
-///					String sdiatance = (String) spdistance.getSelectedItem();
+					String sstatus = editStatusTest.getEditableText().toString().trim(); 
 					
-					String msg = "<#PubDate#>"+sstyle+"|"+ssex+"|"+sage+"|"+sstatus+"|"+uno;					//组织要返回的字符串
+					//组织要发送的字符串
+					String msg = "<#PubDate#>"+sstyle+"|"+ssex+"|"+sage+"|"+sstatus+"|"+uno;
 					mc.dout.writeUTF(msg);										//发出消息
 					String receivedMsg = mc.din.readUTF();		//读取服务器发来的消息
 					pd.dismiss();
 					if(receivedMsg.startsWith("<#PubDate_SUCCESS#>")){	//收到的消息为登录成功消息
-//						receivedMsg = receivedMsg.substring(19);
-//						String [] sa = receivedMsg.split("\\|");
-//						
 						//转到功能面板
 						Intent intent = new Intent(PubDateActivity.this,DateListActivity.class);
 						intent.putExtra("uno", uno);
@@ -249,6 +236,7 @@ public class PubDateActivity extends Activity{
 					}
 					else if(receivedMsg.startsWith("<#PubDate_FAIL#>")){					//收到的消息为发布失败
 						Toast.makeText(PubDateActivity.this, "发布失败", Toast.LENGTH_LONG).show();
+						// 等待用户
 						Looper.loop();
 						Looper.myLooper().quit();
 					}
@@ -258,7 +246,7 @@ public class PubDateActivity extends Activity{
 						Looper.myLooper().quit();
 					}	
 					
-				}catch(Exception e){
+				}catch(Exception e){ //当网络异常时，抛出异常，然后继续等待用户
 					e.printStackTrace();
 					pd.dismiss();
 					if (!mc.socket.isClosed() && mc.socket.isConnected()){
