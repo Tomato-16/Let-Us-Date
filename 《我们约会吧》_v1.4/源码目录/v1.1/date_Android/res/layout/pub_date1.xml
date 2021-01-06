@@ -4,7 +4,7 @@
 	android:layout_width="fill_parent" 
 	android:layout_height="fill_parent"
 	android:orientation="vertical"
-	android:background="@drawable/back">
+	android:background="@drawable/back2">
 	<TextView 
 		android:layout_width="fill_parent"
 		android:layout_height="50dp" 
@@ -171,12 +171,6 @@
 					android:layout_height="60px"
 					android:src="@drawable/dateback"></ImageButton>
 		</TableRow>
-
-		<ImageButton
-		    android:id="@+id/btnTest"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:src="@android:drawable/btn_star" />
 
 	</TableLayout>
 </LinearLayout>

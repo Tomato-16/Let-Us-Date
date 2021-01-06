@@ -109,7 +109,7 @@ public class DateListActivity extends Activity {
 			tvDistance.setText(" 状态：" + dateList.get(position)[4]);// 设置TextView的内容
 			tvDistance.setTextSize(15.0f); // 设置字体大小
 			tvDistance.setTextColor(Color.BLUE); // 设置字体颜色
-			tvDistance.setPadding(150, 0, 0, 0);
+			tvDistance.setPadding(5, 0, 0, 0);
 
 			double la1 = Double.valueOf(infoList[6]);
 			double lo1 = Double.valueOf(infoList[7]);
