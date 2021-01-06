@@ -423,6 +423,7 @@ public class DBUtil {
 				String dstyle = new String(rs.getString(2).getBytes("GB2312"));
 				String dsex = new String(rs.getString(3).getBytes("GB2312"));
 				String dage = rs.getString(4);
+				///修改为setString
 				String ddistance = new String(rs.getString(5).getBytes("GB2312"));
 				String uno = rs.getString(6);
 				//String hid = rs.getString(7);
@@ -478,12 +479,10 @@ public class DBUtil {
 			int max = getMax(DATE);		//获取当前最大编号
 			System.out.println("当前最大编码是"+max);
 			ps.setInt(1, max);				//设置各个字段的值
-//			ps.setString(2, style);
-//			ps.setString(3, sex);
 			ps.setString(2, new String(style.getBytes("GB2312")));	
 			ps.setString(3, new String(sex.getBytes("GB2312")));
 			ps.setInt(4, age);
-			///修改为setString，GOGOGO！
+			///修改为setString
 			ps.setString(5, new String(distance.getBytes("GB2312")));
 			ps.setInt(6, uno);
 			//int u_no = Integer.valueOf(author);	//转成字符串

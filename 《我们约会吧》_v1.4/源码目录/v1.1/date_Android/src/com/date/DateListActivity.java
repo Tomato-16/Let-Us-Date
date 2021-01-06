@@ -104,31 +104,14 @@ public class DateListActivity extends Activity {
 			} else
 				tvAge.setTextColor(Color.RED);
 
-			TextView tvDistance = new TextView(DateListActivity.this); // 创建用于显示姓名的TextView
+			// 创建用于显示动态的TextView
+			TextView tvDistance = new TextView(DateListActivity.this); 
 			tvDistance.setGravity(Gravity.LEFT); // 设置TextView的对齐方式
 			tvDistance.setText(" 状态：" + dateList.get(position)[4]);// 设置TextView的内容
 			tvDistance.setTextSize(15.0f); // 设置字体大小
 			tvDistance.setTextColor(Color.BLUE); // 设置字体颜色
 			tvDistance.setPadding(5, 0, 0, 0);
 
-			double la1 = Double.valueOf(infoList[6]);
-			double lo1 = Double.valueOf(infoList[7]);
-
-			double la2 = Double.valueOf(dateList.get(position)[8]);
-			double lo2 = Double.valueOf(dateList.get(position)[9]);
-/*/// 没必要设置颜色
-			double a = la1 - la2;
-			double b = lo1 - lo2;
-
-			double s = 2 * Math.asin(Math.sqrt(Math.sin(a / 2)
-					* Math.sin(a / 2) + Math.cos(la1) * Math.cos(la2)
-					* Math.sin(b / 2) * Math.sin(b / 2))) * 6378.137;
-
-			if (Double.valueOf(dateList.get(position)[4]) >= s) {
-				tvDistance.setTextColor(Color.GREEN);
-			} else
-				tvDistance.setTextColor(Color.RED);
-*/
 			lnew.addView(tvName); // 将显示姓名的TextView添加到线性布局
 			lnew.addView(tvStyle);
 			lnew.addView(tvSex); // 将显示心情的TextView添加到线性布局
