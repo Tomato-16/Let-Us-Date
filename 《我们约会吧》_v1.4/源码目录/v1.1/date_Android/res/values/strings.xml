@@ -29,7 +29,7 @@
     <string name="tvPartner">对象</string>
     <string name="tvSex">性别：</string>
     <string name="tvAge">年龄：</string>
-    <string name="tvDistance">状态：</string>    
+    <string name="tvDistance">距离：</string>    
     <string name="PubDate">我们约会吧--发布约会</string>    
     <string name="btnSubmit">提交</string>
     <string name="btnCancel">取消</string>

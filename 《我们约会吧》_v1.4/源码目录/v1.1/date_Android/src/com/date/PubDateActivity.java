@@ -206,6 +206,22 @@ public class PubDateActivity extends Activity{
 				finish();
 			}
 		});
+		
+		///添加一个按钮进行尝试
+		ImageButton btnTest = (ImageButton)findViewById(R.id.btnTest); //获得按钮对象
+		btnTest.setScaleType(ImageButton.ScaleType.CENTER_CROP);
+		btnTest.setPadding(8, 8, 8, 8);
+		btnTest.getBackground().setAlpha(100);
+		btnTest.setOnClickListener(new View.OnClickListener() {        //为返回按钮添加监听器
+			
+			public void onClick(View v) {
+				AlertDialog.Builder builder = new AlertDialog.Builder(PubDateActivity.this);
+                builder.setTitle("标题");
+                builder.setMessage("简单消息框");
+                builder.setPositiveButton("确定", null);
+                builder.show();
+			}
+		});
     }
   //方法：连接服务器进行提交
     public void Submit(){
