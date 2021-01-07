@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="listDivider">#ffcc99</color>
+	<color name="character">#f37301</color>
+    <color name="clr_normal">#ff6eff2d</color>
+    <color name="clr_pressed">#669966</color>
+	<drawable name="darkgray">#808080FF</drawable>
+    <drawable name="white">#FFFFFFFF</drawable>
+    <drawable name="black">#000</drawable> 
+    <drawable name="blue">#0000FF</drawable>
+</resources>

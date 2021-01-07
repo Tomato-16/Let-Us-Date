@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="@drawable/back2">
+	<TextView 
+		android:layout_width="fill_parent"
+		android:layout_height="50dp" 
+		android:text="发布约会" 
+		style="@style/widget_config_title">
+	</TextView>
+	<TextView 
+		android:layout_width="fill_parent"
+		android:layout_height="25dp" 
+		android:text="类型" 
+		style="@style/widget_config_item">
+	</TextView>
+	<TableLayout 
+		android:id="@+id/TableLayout01" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:collapseColumns="2"
+		android:layout_gravity="left"
+		>
+	
+		<TableRow 
+			android:gravity="center_horizontal"
+			android:id="@+id/TableRow01" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_marginTop="18dip"
+			android:layout_marginBottom="7dip"
+			>
+				<TextView 
+					android:text="@string/tvStyle" 
+					android:textColor="@drawable/black"
+					android:textSize="16px"
+					android:id="@+id/tvStyle" 
+					android:layout_width="80px"
+					android:layout_height="40px"></TextView>
+				<Spinner 
+				    android:layout_width="200px" 
+				    android:id="@+id/spinnerStyle" 
+				    android:layout_height="40px" ></Spinner>
+		</TableRow>
+	</TableLayout>
+	<TextView 
+		android:layout_width="fill_parent"
+		android:layout_height="25dp" 
+		android:text="@string/tvPartner" 
+		android:layout_marginTop="8dp"
+		style="@style/widget_config_item">
+	</TextView>
+
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="8dp"
+	    android:orientation="horizontal" >
+
+	    	<TextView 
+					android:text="@string/tvSex" 
+					android:textColor="@drawable/black"
+					android:textSize="16px"
+					android:id="@+id/tvSex" 
+					android:layout_marginLeft="21dip"
+					android:layout_marginTop="20dip"
+					android:layout_width="50px"
+					android:layout_height="40px"></TextView>
+				<Spinner 
+				    android:layout_width="200px" 
+				    android:id="@+id/spinnerSex" 
+				    android:layout_marginTop="20dip"
+				    android:layout_height="40px" ></Spinner>
+	    
+	</LinearLayout>
+	<TableLayout 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:collapseColumns="3"
+		android:paddingTop="6dip"
+		>
+	
+		<TableRow 
+			android:gravity="center_horizontal"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="20dip"
+			android:layout_marginTop="7dip"
+			>
+				<TextView 
+					android:text="@string/tvAge" 
+					android:textColor="@drawable/black"
+					android:textSize="16px"
+					android:id="@+id/tvAge" 
+					android:layout_width="40px"
+					android:layout_height="40px"></TextView>
+				<Spinner 
+				    android:layout_width="200px" 
+				    android:id="@+id/spinnerAge" 
+				    android:layout_height="40px" ></Spinner>
+				 <TextView 
+					android:text="@string/tvTag1" 
+					android:textColor="@drawable/black"
+					android:textSize="16px"
+					android:id="@+id/textView1" 
+					android:layout_width="50px"
+					android:layout_height="40px"></TextView>
+		</TableRow>
+
+		<TableRow
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginBottom="7dip"
+		    android:layout_marginLeft="-15dp"
+		    android:layout_marginTop="13dip"
+		    android:gravity="center_horizontal" >
+
+				<TextView 
+					android:text="@string/tvDistance" 
+					android:textColor="@drawable/black"
+					android:textSize="16px"
+					android:id="@+id/tvDistance" 
+					android:layout_width="50px"
+					android:layout_height="40px"></TextView>
+
+				<EditText
+				    android:id="@+id/statusTest"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_marginLeft="2dp"
+				    android:ems="10" />
+
+		</TableRow>
+	</TableLayout>
+	<TextView 
+		android:layout_width="fill_parent"
+		android:layout_height="25dp" 
+		android:text="操作"
+		android:layout_marginTop="10dip" 
+		style="@style/widget_config_item">
+	</TextView>
+	<TableLayout 
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
+		android:collapseColumns="3"
+		>
+		<TableRow 
+			android:gravity="center_horizontal"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp">
+				<ImageButton 
+					android:text="@string/btnSubmit" 
+					android:id="@+id/btnSubmit" 
+					android:textColor="@drawable/blue"
+					android:textSize="16px"
+					android:layout_width="110px" 
+					android:layout_height="60px"
+					android:src="@drawable/datesubmit"></ImageButton>
+				<ImageButton 
+					android:text="@string/btnCancel" 
+					android:id="@+id/btnCancel" 
+					android:textColor="@drawable/blue"
+					android:textSize="16px"
+					android:layout_width="110px" 
+					android:layout_height="60px"
+					android:src="@drawable/datecancel"></ImageButton>
+				<ImageButton 
+					android:text="@string/btnBack" 
+					android:id="@+id/btnBack" 
+					android:textColor="@drawable/blue"
+					android:textSize="16px"
+					android:layout_width="110px" 
+					android:layout_height="60px"
+					android:src="@drawable/dateback"></ImageButton>
+		</TableRow>
+
+	</TableLayout>
+</LinearLayout>

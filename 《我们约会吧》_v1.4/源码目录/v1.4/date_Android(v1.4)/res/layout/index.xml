@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center" android:background="@drawable/back">
+<TextView  
+    android:layout_height="wrap_content" 
+    android:text="@string/hello" android:layout_width="fill_parent" android:gravity="center" android:textSize="25dp" style="@style/text"/>
+<Button android:layout_width="wrap_content" android:text="@string/btn_hello" android:layout_height="wrap_content" 
+android:background="@drawable/bt_shape"  android:gravity="center" style="@style/button" android:id="@+id/btnHello"></Button>
+</LinearLayout>

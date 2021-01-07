@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lgc"
+    android:orientation="vertical" >
+
+	<TextView 
+		android:layout_width="fill_parent"
+		android:layout_height="50dp" 
+		android:text="客服中心" 
+		style="@style/widget_config_title"/>
+	<TextView 
+        style="@style/text" 
+        android:layout_height="50dp" 
+        android:layout_width="wrap_content"
+        android:paddingTop="15dp" 
+        android:paddingLeft="20dp" 
+        android:layout_marginTop="30dp"
+        android:textColor="@drawable/blue"
+        android:text="客服电话：1000000" />
+	
+	<TextView 
+        style="@style/text" 
+        android:layout_height="50dp" 
+        android:layout_width="wrap_content"
+        android:paddingTop="15dp" 
+        android:paddingLeft="20dp" 
+        android:layout_marginTop="30dp"
+        android:textColor="@drawable/blue"
+        android:text="客服时间：周一到周五 9:00~18:00" />
+	
+	<TextView 
+			android:layout_width="fill_parent"
+			android:layout_height="25dp" 
+			android:text="选择操作" 
+			android:layout_marginTop="30dp"
+			style="@style/widget_config_item"/>
+	
+	<ImageButton 
+		android:text="@string/btnBack" 
+		android:id="@+id/btnBack" 
+		android:textColor="@drawable/blue"
+		android:textSize="16px"
+		android:layout_gravity="center"
+		android:layout_width="110px" 
+		android:layout_height="60px"
+		android:src="@drawable/dateback"></ImageButton>
+</LinearLayout>
